@@ -14,3 +14,4 @@ requests==2.24.0
 djangorestframework==3.12.2
 django-rest-framework==0.1.0
 django-cors-headers
+rejson
