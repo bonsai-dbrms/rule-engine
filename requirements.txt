@@ -1,0 +1,15 @@
+cython
+Django==3.0.7
+gunicorn
+psycopg2-binary
+dj-database-url
+boto3
+django-storages
+whitenoise==3.2
+# numpy==1.19.1
+# reverse-geocoder==1.5.1
+# scipy==1.5.2
+beautifulsoup4==4.9.1
+requests==2.24.0
+djangorestframework==3.12.2
+django-rest-framework==0.1.0
