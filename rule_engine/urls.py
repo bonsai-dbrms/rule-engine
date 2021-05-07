@@ -20,5 +20,7 @@ from api import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('rules/', views.Rules.as_view()),
+    path('rule/', views.Rule.as_view()),
+    path('attributes/', views.Attributes.as_view()),
     path('rules_evaluation/', views.RulesEvaluation.as_view()),
 ]
