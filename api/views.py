@@ -163,5 +163,10 @@ class Attributes(APIView):
         
         
         print(attributes_in_namespace)
-
-        return Response(list(attributes_in_namespace))
+        attributes = []
+        for attribute in list(attributes_in_namespace):
+            attribute_components = attribute.split(':')
+            attribute_dict ={'attribute_name':attribute_components[0] , 'type': attribute_components[1]}
+            attributes.append(attribute_dict)
+        
+        return Response({'attributes':attributes})
