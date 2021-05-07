@@ -130,7 +130,7 @@ class RulesEvaluation(APIView):
         """
         # result = bonsai_object.process(request.data)
         return Response({
-        "rule_execution_order":[1,2,3],
+        "rule_execution_order":['a1','a2','a3'],
         "outputs": [
                 {
                 "attribute_name": "tax_rate",
