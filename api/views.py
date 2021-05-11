@@ -10,14 +10,8 @@ from extentions.redisjson_utility import RedisJsonUtilities
 import json
 # from bonsaicore.bonsai import Bonsai
 
-# from bonsaicore import bonsai_object
-"""
-evaluation ke lia values get karne ke lia api
-evaluation ki values submit karne ke lia api
-all tasks list api
-eve button par click karke uske rules ka data get karne ki
+from bonsaicore import bonsai_object , EvaluationInput
 
-"""
 # add error handling and validation in all api's
 class Rule(APIView):
     """
@@ -33,7 +27,7 @@ class Rule(APIView):
         rule_id = request.GET.get('rule_id')
         client = RedisClient().get_instance()
         redisjson_utility_object = RedisJsonUtilities(client)
-        rule  = redisjson_utility_object.get_values_by_key(namespace,'.' + str(rule_id))
+        rule  = redisjson_utility_object.get_values_by_key('all_rules','.' + str(namespace)+'.' + str(rule_id))
 
         return Response(rule)
 
@@ -73,7 +67,7 @@ class Rule(APIView):
         print()
         client = RedisClient().get_instance()
         redisjson_utility_object = RedisJsonUtilities(client)
-        redis_response  = redisjson_utility_object.append_rules_in_redis(namespace ,'.' + str(rule_id), data)
+        redis_response  = redisjson_utility_object.append_rules_in_redis('all_rules' ,'.'+str(namespace) + '.' + str(rule_id), data , namespace)
         if redis_response:
             return Response("success", status=status.HTTP_201_CREATED)
         return Response("failiure", status=status.HTTP_400_BAD_REQUEST)
@@ -87,7 +81,7 @@ class Rules(APIView):
         namespace = request.GET.get('namespace')
         client = RedisClient().get_instance()
         redisjson_utility_object = RedisJsonUtilities(client)
-        rules  = redisjson_utility_object.get_values_by_key(namespace,'.').values()
+        rules  = redisjson_utility_object.get_values_by_key('all_rules','.' + str(namespace)).values()
         return Response(rules)
 
 
@@ -128,18 +122,71 @@ class RulesEvaluation(APIView):
             ]
         }
         """
-        # result = bonsai_object.process(request.data)
-        return Response({
-        "rule_execution_order":['a1','a2','a3'],
-        "outputs": [
-                {
-                "attribute_name": "tax_rate",
+        #format of rule data in redis
+        """
+        "tax_system"{
+        "a1": {
+            "id": a1,
+            "namespace": "tax_system",
+            "rule_description": "this is a test rule",
+            "predicates": [
+            {
+                "attribute_name": "Province",
                 "operator": "eq",
-                "type": "int",
-                "value": 35
-                }
-            ]
-        })
+                "type": "string",
+                "value": "Ontario"
+            },
+            {
+                "attribute_name": "City",
+                "operator": "eq",
+                "type": "string",
+                "value": "Toronto"
+            }
+            ],
+            "result": ,
+            {
+            "attribute_name": "tax_rate",
+            "operator": "eq",
+            "type": "string",
+            "value": "35"
+            }
+        },
+        "a2": {
+            "id": a2,
+            "namespace": "tax_system",
+            "rule_description": "this is a test rule 2",
+            "predicates": [
+            {
+                "attribute_name": "Province",
+                "operator": "eq",
+                "type": "string",
+                "value": "British Columbia"
+            },
+            {
+                "attribute_name": "City",
+                "operator": "eq",
+                "type": "string",
+                "value": "Vancouver"
+            }
+            ],
+            "result": ,
+            {
+            "attribute_name": "tax_rate",
+            "operator": "eq",
+            "type": "string",
+            "value": "40"
+            }
+        }
+        }
+        """
+        #nipun to edit this
+        print(request.data)
+        eval_input = EvaluationInput.build(raw_input= request.data)
+        result = bonsai_object.process(eval_input = eval_input)
+
+
+        #result should be in this format
+        return Response(result.__dict__)
 
 class Attributes(APIView):
     """
@@ -152,7 +199,7 @@ class Attributes(APIView):
         namespace = request.GET.get('namespace')
         client = RedisClient().get_instance()
         redisjson_utility_object = RedisJsonUtilities(client)
-        rules  = redisjson_utility_object.get_values_by_key(namespace,'.').values()
+        rules  = redisjson_utility_object.get_values_by_key('all_rules','.' + str(namespace)).values()
         # print(rules)
         attributes_in_namespace = set()
         for rule in rules:

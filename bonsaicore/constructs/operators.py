@@ -1,4 +1,4 @@
-from typing import Callable 
+from typing import Callable
 from enum import Enum, auto
 
 # TODO : add support for floating point numbers
@@ -107,3 +107,6 @@ OPERATION_EVALUATOR_MAP = {
     Operator.lt : eval_lt,
     Operator.lte : eval_lte
 }
+
+if __name__ == "__main__":
+    print(Operator['eq'])

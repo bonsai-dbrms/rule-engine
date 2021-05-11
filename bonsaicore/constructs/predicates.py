@@ -2,7 +2,6 @@
 from typing import Any
 from bonsaicore.constructs import Operator, OPERATION_EVALUATOR_MAP
 
-
 class Predicate:
 
     def __init__(self, subject_attribute : str ,operator: Operator, target_val: Any) -> None:

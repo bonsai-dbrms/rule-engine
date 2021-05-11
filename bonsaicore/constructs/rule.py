@@ -1,4 +1,4 @@
-from bonsaicore.constructs import Predicate
+from bonsaicore.constructs.predicates import Predicate
 '''
 Defines any rule , with corresponding rule id and list of predicates
 '''
