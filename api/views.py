@@ -180,8 +180,8 @@ class RulesEvaluation(APIView):
         }
         """
         #nipun to edit this
-        print(request.data)
         eval_input = EvaluationInput.build(raw_input= request.data)
+        print(eval_input.__dict__)
         result = bonsai_object.process(eval_input = eval_input)
 
 

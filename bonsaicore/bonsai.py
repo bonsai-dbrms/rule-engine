@@ -56,7 +56,7 @@ class Bonsai:
         result_set: set = set()
         prev_epoch_set_size = 0
         input = eval_input.input
-        output = input
+        output = {}
         rule_set = self.rules[eval_input.namespace]
 
         while True:
