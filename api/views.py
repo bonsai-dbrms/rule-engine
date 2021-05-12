@@ -10,7 +10,7 @@ from extentions.redisjson_utility import RedisJsonUtilities
 import json
 # from bonsaicore.bonsai import Bonsai
 
-from bonsaicore import bonsai_object , EvaluationInput
+from bonsaicore import initialize_bonsai , EvaluationInput
 
 # add error handling and validation in all api's
 class Rule(APIView):
@@ -180,6 +180,7 @@ class RulesEvaluation(APIView):
         }
         """
         #nipun to edit this
+        bonsai_object = initialize_bonsai()
         eval_input = EvaluationInput.build(raw_input= request.data)
         print(eval_input.__dict__)
         result = bonsai_object.process(eval_input = eval_input)

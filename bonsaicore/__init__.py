@@ -9,5 +9,3 @@ def initialize_bonsai():
     rules  = redisjson_utility_object.get_values_by_key('all_rules' , '.')
     rule_evaluator = Bonsai(rules)
     return rule_evaluator
-
-bonsai_object = initialize_bonsai()
