@@ -56,7 +56,7 @@ class Bonsai:
         result_set: set = set()
         prev_epoch_set_size = 0
         input = eval_input.input
-        output = input
+        output = {}
         rule_set = self.rules[eval_input.namespace]
 
         while True:
@@ -65,7 +65,8 @@ class Bonsai:
                 if does_match:
                     result_set.add(rule.id)
                     for rule_object in rule.result:
-                        output[rule_object['attribute_name']] = rule_object['value']
+                        output['attribute_name'] = rule_object['attribute_name']
+                        output['value'] = rule_object['value']
 
             if prev_epoch_set_size == len(result_set):
                 ## No rules matched in this epoch
