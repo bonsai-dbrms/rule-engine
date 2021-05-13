@@ -81,7 +81,10 @@ class Rules(APIView):
         namespace = request.GET.get('namespace')
         client = RedisClient().get_instance()
         redisjson_utility_object = RedisJsonUtilities(client)
-        rules  = redisjson_utility_object.get_values_by_key('all_rules','.' + str(namespace)).values()
+        try:
+            rules  = redisjson_utility_object.get_values_by_key('all_rules','.' + str(namespace)).values()
+        except:
+            rules = []
         return Response(rules)
 
 
@@ -200,7 +203,10 @@ class Attributes(APIView):
         namespace = request.GET.get('namespace')
         client = RedisClient().get_instance()
         redisjson_utility_object = RedisJsonUtilities(client)
-        rules  = redisjson_utility_object.get_values_by_key('all_rules','.' + str(namespace)).values()
+        try:
+            rules  = redisjson_utility_object.get_values_by_key('all_rules','.' + str(namespace)).values()
+        except:
+            rules = []
         # print(rules)
         attributes_in_namespace = set()
         for rule in rules:
