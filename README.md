@@ -24,7 +24,7 @@ Bonsai is a platform to store, evaluate and analyse all your business decisions/
 - Bonsai Decision Service : hosts and evaluates business rules pertaining to particular namespace. Uses RedisJSON as the underlying storage for all the rules
 
 - Bonsai UI : Interface for authoring and previewing all business rules. Interacts with the decision service for all operations
-- 
+
 ### Examples of bonsai being used for 
 - Loyalty Management System 
 - Codless API's
@@ -121,6 +121,16 @@ Here namespace is : `loyalty_system` and rule_id is : `123456`.
  ``````
 JSON.SET namespace_name .rule_id rule_object
 ``````
+ #### Command used to get all rules in namespace is :
+ ``````
+JSON.GET namespace_name 
+``````
+
+ #### Command used to get one rules in namespace  by rule_id is :
+ ``````
+JSON.GET namespace_name path .rule_id
+``````
+
 
 ## Features
 
