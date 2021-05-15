@@ -1,5 +1,5 @@
 
-## Bonsai : Business Intelligence Automation
+## Bonsai : Distributed Business Rule Management and Intelligence Platform.
 
   
 
