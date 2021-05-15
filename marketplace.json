@@ -1,0 +1,29 @@
+{
+    "app_name": "Bonsai",
+    "description": "Business Intelligence Platform", // One line description
+    "hidden": "true", // Can be "true" or "false". If true, this app won't show up in Marketplace.
+    "rank": "21", // This is used to sort the apps in the marketplace. 1 to 20 are reserved. Enter greater than 20
+    "type": "Full App", //Can be "Building Block" or "Full App"
+    "contributed_by": "Community", // Can be "Redis Labs" or "Community" or "Partner"
+    "repo_url": "https://github.com/bonsai-dbrms", //This is the Gitub Repo's URL.
+    "download_url": "https://github.com/bonsai-dbrms/rule-engine/archive/refs/heads/master.zip",//This is a direct link to the Github's download button so people can download it directly from the Marketplace
+    "hosted_url": "https://bonsai-frontend.vercel.app/", //The URL of the app. if you are hosting this app somewhere
+    "quick_deploy": "true", //"frue" if the project has Heroku, Vercel, Google deploy buttons
+    "deploy_buttons": [
+     {
+            "heroku": "https://heroku.com/deploy?template=https://github.com/bonsai-dbrms/rule-engine" //Deploy button URL for deploying on Heroku
+        },
+        {
+            "vercel": "https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fbonsai-dbrms%2Ffrontend" //Deploy button URL for deploying on Vercel
+        }],//Deploy buttons for "heroku", "vercel" or "Google" in the form of objects.
+    "language": ["JavaScript", "HTML", "CSS", "Python"], // Backend technologies: "JavaScript", "Java", "Python", "Go", "C#", "Ruby", "PHP", etc. 
+    "redis_commands": ["JSON.SET", "TS.ADD", "JSON.GET"], // Enter all the Redis commands
+    "redis_features": ["caching", "json", "timeseries"],// Enter any core Redis feature or leave it blank.
+    "redis_modules": ["RediJSON", "RedisTimeseries"], //Value can be one or more of "RediJSON", "", "RedisTimeseries", "RedisAI"  "RedisGears" or "RedisGraph" listed in an array. 
+    "app_image_urls": ["https://i.imgur.com/ximdta3.png","https://i.imgur.com/FelEuO6.png", "https://i.imgur.com/KPcqMh9.png" , "https://i.imgur.com/8KYAWFu.png", "https://i.imgur.com/F0Htrgd.png"
+    ], // Provide any image urls in an array.
+    "youtube_url": "", //Provide a Youtube link to your app's video
+    "special_tags": [Hackathon], // "Hackathon", "Paid", or any event names.
+    "verticals": [Financial,Retail,Technology, "Healthcare", "Tourism", "Manufacturing"], // Can be: "Healthcare", "Financial", "Tourism", "Retail", "Oil & Gas", "Manufacturing", "Technology","Education", "Construction"  
+    "markdown": "https://raw.githubusercontent.com/bonsai-dbrms/rule-engine/master/README.md", // Link to the RAW Markdown.
+}
