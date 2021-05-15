@@ -12,6 +12,9 @@
     "deploy_buttons": [
      {
             "heroku": "https://heroku.com/deploy?template=https://github.com/bonsai-dbrms/rule-engine" //Deploy button URL for deploying on Heroku
+        },
+        {
+            "vercel": "https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fbonsai-dbrms%2Ffrontend" //Deploy button URL for deploying on Vercel
         }],//Deploy buttons for "heroku", "vercel" or "Google" in the form of objects.
     "language": ["JavaScript", "HTML", "CSS", "Python"], // Backend technologies: "JavaScript", "Java", "Python", "Go", "C#", "Ruby", "PHP", etc. 
     "redis_commands": ["JSON.SET", "TS.ADD", "JSON.GET"], // Enter all the Redis commands
