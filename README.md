@@ -117,7 +117,7 @@ Every rule gets saved into a namespace via the following format .
 }
 ```
 Here namespace is : `loyalty_system` and rule_id is : `123456`.
- #### Command used to create namespace is :
+ #### Command used to update rule in namespace is :
  ``````
 JSON.SET namespace_name .rule_id rule_object
 ``````
@@ -139,3 +139,7 @@ The code uses pattern matching algorithms to see which rule fits the entity best
 #### Rule Analysis
 ![Analysis GIF](gifs/analysis.gif)
 We have used `redis Timeseries database` to publish basic telemetery of rule excution and evaluation processes to give the business users capabilities to make data driven decisions on the basis of performance of rules in their namespace.
+
+ #### Command used to expose time series datas :
+ ``````
+TS.ADD ruleId * 1
