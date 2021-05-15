@@ -125,17 +125,17 @@ JSON.SET namespace_name .rule_id rule_object
 ## Features
 
 #### Rule creation 
- ![CREATION GIF](https://i.imgur.com/5dilrfg.gifv)
+ ![CREATION GIF](gifs/creation.gif)
 A very easy to use USER EXPERIENCE to add inputs and configure outputs as seen in the gif above.
 
 #### Rule Visualization
-![VISUALIZATION GIF](https://i.imgur.com/5dilrfg.gifv)
+![VISUALIZATION GIF](gifs/visualization.gif)
 Once rule is created you can easily visualize in the form of a flow chart which makes it even easier to debug for business teams `which is one of the main disadvantages of a traditional rule engine`
 
 #### Rule Evaluation
-![VISUALIZATION GIF](https://i.imgur.com/5dilrfg.gifv)
+![VISUALIZATION GIF](gifs/evaluation.gif)
 The code uses pattern matching algorithms to see which rule fits the entity best and also emits the order in which rules were executed (in other words chained rule execution is also possible)
 
 #### Rule Analysis
-![Analysis GIF](https://i.imgur.com/5dilrfg.gifv)
+![Analysis GIF](gifs/analysis.gif)
 We have used `redis Timeseries database` to publish basic telemetery of rule excution and evaluation processes to give the business users capabilities to make data driven decisions on the basis of performance of rules in their namespace.
