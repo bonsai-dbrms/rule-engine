@@ -15,7 +15,7 @@ Bonsai is a platform to store, evaluate and analyse all your business decisions/
 
   
 
-![BonsaiHLD](https://i.imgur.com/TKhjxvG.jpeg)
+![BonsaiHLD](https://i.imgur.com/nDdHUD5.jpeg)
 
   
 
@@ -66,9 +66,9 @@ Each Entity means the input into a namespace which inturn will give an output af
        - `lte` which means lesser than or equal to `<=`
 
 
-For example we want to create a rule for a customer who has placed 5 orders or less and has prime membership of my ecommerce site, I want to give him a 10% discount. 
+For example we want to create a rule to determine tax value of a citizen who has lives in province `ontario` and city `toronto` . The tax for this citizen should be `35%`.
 
-So in this case I have two inputs `orders` and `member_type` and one output `discount_value`. 
+So in this case I have two variables `province` and `city` and one output `tax_rate`. 
 So in our case one example predicate(input) of `province is Ontario` can be
 a predicate consists of 4 parts : 
 ```
