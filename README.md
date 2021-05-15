@@ -121,6 +121,16 @@ Here namespace is : `loyalty_system` and rule_id is : `123456`.
  ``````
 JSON.SET namespace_name .rule_id rule_object
 ``````
+ #### Command used to get all rules in namespace is :
+ ``````
+JSON.GET namespace_name 
+``````
+
+ #### Command used to get one rules in namespace  by rule_id is :
+ ``````
+JSON.GET namespace_name path .rule_id
+``````
+
 
 ## Features
 
