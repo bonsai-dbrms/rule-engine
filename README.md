@@ -3,7 +3,7 @@
 
   
 
-For every business , there are a set of rules which define all actions and behaviours. Products which leverage technology for its distribution and usage may contain millions of rules , which are usually tightly coupled with multiple if-else statements within code or configuration files across services
+For every business, there are a set of rules which define all actions and behaviours. Products which leverage technology for its distribution and usage may contain millions of rules, which are usually tightly coupled with multiple if-else statements within code or configuration files across services
 
   
 
@@ -19,11 +19,11 @@ Bonsai is a platform to store, evaluate and analyse all your business decisions/
 
   
 
-## On a high level , the platform has two components
+## On a high level, the platform has two components
 
 - Bonsai Decision Service : hosts and evaluates business rules pertaining to particular namespace. Uses RedisJSON as the underlying storage for all the rules
 
-- Bonsai UI : Interface for authoring and previewing all business rules . Interacts with the decision service for all operations
+- Bonsai UI : Interface for authoring and previewing all business rules. Interacts with the decision service for all operations
 - 
 ### Examples of bonsai being used for 
 - Loyalty Management System 
@@ -38,7 +38,7 @@ Bonsai is a platform to store, evaluate and analyse all your business decisions/
 - entity
 
 #### Namespace
-The top most logical seperation of rules are on the basis of namespace. Namespace is one set of rules which are to be evaluated on some data. For example you are will build a namespace for a loyalty management system and all the rules regarding that will be saved under that namespace. 
+The top most logical seperation of rules are on the basis of namespace. Namespace is one set of rules which are to be evaluated on some data. For example you will build a namespace for a loyalty management system and all the rules regarding that will be saved under that namespace. 
  - The structure for saving our data is 
  ```
  {
@@ -51,25 +51,25 @@ The top most logical seperation of rules are on the basis of namespace. Namespac
 JSON.SET namespace_name . {}
 ``````
 #### Entity
-Each Entity means the input into a namespace which inturn will be given an out put after  evaluation of the rules present in that namespace and 
+Each Entity means the input into a namespace which inturn will give an output after  evaluation of the rules present in that namespace.
 #### Rules
 ##### sub keywords
-- predicates: this just means the input conditions for your rules.
-- results: this means the output conditions for your rules
-- operators: we have 7 operators :
-       - `eq` which means `=`
-       - `range` which means the value should lie between the given range(upper limit not included)
-       - `contains` which means that the string should contain the input value given.
-       - `gt` which means greater than or `>`
-       - `gte` which means greater than or equal to `>=`
-       - `lt` which means lesser than `<`
+- Predicates: This means the input conditions for your rules.
+- Results: This means the output conditions for your rules.
+- Operators: We have 7 operators :\
+       - `eq` which means `=`\
+       - `range` which means the value should lie between the given range(upper limit not included)\
+       - `contains` which means that the string should contain the input value given.\
+       - `gt` which means greater than or `>`\
+       - `gte` which means greater than or equal to `>=`\
+       - `lt` which means lesser than `<`\
        - `lte` which means lesser than or equal to `<=`
 
 
-For example we want to create a rule for a customer who has places 5 orders or less and has prime membership of my ecommerce site i want to give him a 10% discount. 
+For example we want to create a rule for a customer who has placed 5 orders or less and has prime membership of my ecommerce site, I want to give him a 10% discount. 
 
-So in this case i have two inputs `orders` and `member_type` and one output `discount_value`. 
-so in our case one example predicate(input) of `province is Ontario` can be
+So in this case I have two inputs `orders` and `member_type` and one output `discount_value`. 
+So in our case one example predicate(input) of `province is Ontario` can be
 a predicate consists of 4 parts : 
 ```
 {
@@ -80,7 +80,7 @@ a predicate consists of 4 parts :
  }
 ```
 
-Each rules is  a command which decides what should be the output to any particular input ( `entity` )
+Each rules is a command which decides what should be the output to any particular input ( `entity` )
 
 Every rule gets saved into a namespace via the following format . 
   example used in this rule is if province is` Ontario and city is Toronto the tax rate will be 35`
