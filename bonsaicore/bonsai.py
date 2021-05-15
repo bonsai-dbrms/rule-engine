@@ -4,6 +4,8 @@ from typing import List, Any
 
 from bonsaicore.constructs import Operator,Predicate,Rule
 
+from extentions.redis_client import RedisTSClient
+
 
 class EvaluationResult:
 
@@ -37,6 +39,7 @@ class Bonsai:
 
     def __init__(self, raw_rule_set: dict):
         self.rules: [Rule] = self.setUp(raw_rule_set)
+        self.telemeter = RedisTSClient().get_instance()
         print(self.rules)
 
     '''
@@ -67,6 +70,7 @@ class Bonsai:
                     for rule_object in rule.result:
                         output['attribute_name'] = rule_object['attribute_name']
                         output['value'] = rule_object['value']
+                    self.telemeter.add(str(rule.id), '*', 1)
 
             if prev_epoch_set_size == len(result_set):
                 ## No rules matched in this epoch
