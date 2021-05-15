@@ -23,7 +23,7 @@
     "app_image_urls": ["https://i.imgur.com/ximdta3.png","https://i.imgur.com/FelEuO6.png", "https://i.imgur.com/KPcqMh9.png" , "https://i.imgur.com/8KYAWFu.png", "https://i.imgur.com/F0Htrgd.png"
     ], // Provide any image urls in an array.
     "youtube_url": "", //Provide a Youtube link to your app's video
-    "special_tags": [Hackathon], // "Hackathon", "Paid", or any event names.
-    "verticals": [Financial,Retail,Technology, "Healthcare", "Tourism", "Manufacturing"], // Can be: "Healthcare", "Financial", "Tourism", "Retail", "Oil & Gas", "Manufacturing", "Technology","Education", "Construction"  
+    "special_tags": ["Hackathon"], // "Hackathon", "Paid", or any event names.
+    "verticals": ["Financial","Retail","Technology", "Healthcare", "Tourism", "Manufacturing"], // Can be: "Healthcare", "Financial", "Tourism", "Retail", "Oil & Gas", "Manufacturing", "Technology","Education", "Construction"  
     "markdown": "https://raw.githubusercontent.com/bonsai-dbrms/rule-engine/master/README.md", // Link to the RAW Markdown.
 }
