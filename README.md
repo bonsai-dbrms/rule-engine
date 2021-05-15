@@ -24,7 +24,7 @@ Bonsai is a platform to store, evaluate and analyse all your business decisions/
 - Bonsai Decision Service : hosts and evaluates business rules pertaining to particular namespace. Uses RedisJSON as the underlying storage for all the rules
 
 - Bonsai UI : Interface for authoring and previewing all business rules. Interacts with the decision service for all operations
-- 
+
 ### Examples of bonsai being used for 
 - Loyalty Management System 
 - Codless API's
